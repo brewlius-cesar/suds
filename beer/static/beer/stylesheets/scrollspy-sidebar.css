@@ -1,0 +1,100 @@
+/*
+ * Creates a sidebar with decorations and "scrollspying" just like
+ * in the Bootstrap documentation.
+ *
+ * Most of this is owed to the awesome tutorial written by
+ * Kyle Mitofsky at:
+ * http://www.codingeverything.com/2014/02/BootstrapDocsSideBar.html
+ */
+
+/* sidebar */
+#scrollspy-sidebar {
+    padding-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#scrollspy-sidebar>ul {
+    position: fixed;
+}
+
+/* all links */
+#scrollspy-sidebar .nav>li>a {
+    color: #777777;
+    padding: 4px 20px;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* nested links */
+#scrollspy-sidebar .nav .nav>li>a {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 30px;
+    font-size: 12px;
+}
+
+/* This was necesarry in Firefox on Arch Linux */
+html {
+    height: 100%;
+}
+
+/* all links */
+#scrollspy-sidebar .nav>li>a {
+    /*add trasnparent border */
+    border-left: 2px solid transparent;
+}
+/* active & hover links */
+#scrollspy-sidebar .nav>.active>a,
+#scrollspy-sidebar .nav>li>a:hover,
+#scrollspy-sidebar .nav>li>a:focus {
+    color: #777777;
+    text-decoration: none;
+    background-color: transparent;
+    border-left: 2px solid #777777;
+}
+
+/* all active links */
+#scrollspy-sidebar .nav>.active>a,
+#scrollspy-sidebar .nav>.active:hover>a,
+#scrollspy-sidebar .nav>.active:focus>a {
+    font-weight: 700;
+}
+
+/* nested active links */
+#scrollspy-sidebar .nav .nav>.active>a,
+#scrollspy-sidebar .nav .nav>.active:hover>a,
+#scrollspy-sidebar .nav .nav>.active:focus>a {
+    font-weight: 500;
+}
+
+/* hide all (inactive) nested list */
+#scrollspy-sidebar .nav ul.nav {
+    display: none;
+}
+
+/* show active nested list */
+#scrollspy-sidebar .nav>.active>ul.nav {
+    display: block;
+}
+
+.new-btn {
+	float: right;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+.save-button {
+	margin-bottom: 40px;
+}
+
+.errorlist {
+	color: #a94442;
+}
+
+.addnewbtn {
+	margin-top: 50%;
+}
+
+
+

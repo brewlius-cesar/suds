@@ -1,0 +1,20 @@
+.form-signin {
+    max-width: 330px;
+    margin: 40px auto 0 auto;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #e4e4e4;
+    border-width: 4px;
+
+    padding: 10px 10px 80px 10px;
+}
+
+#inputUser, #inputPassword {
+    margin-top: 6px;
+}
+
+#inputPassword {
+	margin-bottom: 20px;
+}
+
+
