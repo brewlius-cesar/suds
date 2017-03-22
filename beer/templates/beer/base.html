@@ -1,71 +1,17 @@
 {% load static from staticfiles %}
-{% load beer_extras %}
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-
     <link rel="stylesheet" href="{% static "bootstrap/css/bootstrap.min.css" %}">
     <link rel="stylesheet" href="{% static "beer/stylesheets/base.css" %}">
-
-    {% block head %}
-    {% endblock %}
-
 </head>
 <body>
-<nav class="navbar navbar-default navbar-static-top">
-  <div class="container-fluid">
-      <div class="navbar-header">
-          <a class="navbar-brand" href="{% url "summary" %}">
-              <img alt="Suds" src="">
-          </a>
-      </div>
-      {% if user.is_authenticated %}
-          <ul class="nav nav-pills">
-              <li role="presentation" class="{% ActiveTab request "inventorylist" suffix="*" %}">
-                  <a href="{% url "inventorylist" %}">Inventory</a>
-              </li>
-              <li role="presentation" class="{% ActiveTab request "orders" suffix="*" %}">
-                  <a href="{% url "orders" %}">Orders</a>
-              </li>
-              <li role="presentation" class="{% ActiveTab request "customers" suffix="*" %}">
-                  <a href="{% url "customers" %}">Customers</a>
-              </li>
-              {% if user.is_superuser %}
-                  <li role="presentation" class="{% ActiveTab request "admin" suffix="*" %}">
-                      <a href="{% url "admin" %}">Admin</a>
-                  </li>
-              {% endif %}
-          </ul>
-          <ul class="nav nav-pills" id="log-in-out">
-              <li role="presentation">
-                  <a href="{% url "logout" %}">
-                      <span class="glyphicon glyphicon-log-out"></span>
-                  </a>
-              </li>
-          </ul>
-      {% else %}
-          <ul class="nav nav-pills" id="log-in-out">
-              <li role="presentation">
-                  <a href="{% url "login" %}">
-                      <span class="glyphicon glyphicon-log-in"></span>
-                  </a>
-              </li>
-          </ul>
-      {% endif %}
-  </div>
-</nav>
-
-{% block content %}
-{% endblock %}
 
 <!-- Post-doc Scripts -->
 <script src="{% static "jquery-1.12.0.min.js" %}"></script>
 <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-
-{% block post_content %}
-{% endblock %}
 
 </body>
 </html>

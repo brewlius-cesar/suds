@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname( os.path.dirname( os.path.abspath( __file__ ) ) )
 
 
 # Quick-start development settings - unsuitable for production
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'beer'
 ]
 
@@ -77,7 +78,7 @@ WSGI_APPLICATION = 'suds.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join( BASE_DIR, 'db.sqlite3' ),
     }
 }
 
@@ -125,7 +126,12 @@ STATICFILES_DIRS = [
                        ( 'beer', os.path.join( BASE_DIR, 'beer/static' ) )
                    ]
 
-# URL for logins
-LOGIN_URL='/beer/login/'
-LOGIN_REDIRECT_URL='/'
+LOGIN_URL = '/beer/auth/'
+LOGIN_REDIRECT_URL = '/'
 
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated'
+    ],
+    'PAGE_SIZE': 10
+}
